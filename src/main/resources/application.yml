@@ -1,0 +1,34 @@
+server:
+  port: 6060
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ozonstatisticstest
+    username: postgres
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    generate-ddl: false
+    show-sql: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security: trace
+
+
+
+# for heroku
+#  datasource:
+#    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/authorizationserverstorage}
+#    username: ${JDBC_DATABASE_USERNAME:postgres}
+#    password: ${JDBC_DATABASE_PASSWORD:root}
+#    driver-class-name: org.postgresql.Driver
